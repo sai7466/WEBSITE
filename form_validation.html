@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration Form</title>
+	<style type="text/css">
+		.fm{
+			margin-top: 0px;
+			background-color:gray;
+			border: 2px solid aqua;
+			width: 60%;
+			height:800px;
+			text-align: center;
+			border-radius: 10px;	
+		}
+		h1{
+			background-color:lightsalmon;
+			color: red;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			margin-bottom: 10px;
+			margin-top: 0px;
+			border-radius: 10px;
+		}
+		.div{
+			color: red;
+			display:inline;
+			visibility:hidden;
+
+		}
+		.image{
+			position: absolute;
+			top:44.9%;
+			left:57.9%;
+			margin-right: 20px;
+			width: 15px;
+			height: 15px;
+			display: block;
+		}
+		.image1{
+			position: absolute;
+			top:44.9%;
+			left:57.9%;
+			margin-right: 20px;
+			width: 15px;
+			height: 15px;
+			display: none;			
+		}
+		.content{
+			border: 1px solid green;
+			width: 60%;
+			height: 300px;
+			margin: 5% 20%;
+			background-image: linear-gradient(to left,palegreen,white,palegreen)
+
+		}
+/*		.divl{
+			color: red;
+			display:inline;
+			visibility:visible;
+
+		}*/
+/*		.span{
+			color: red;
+			display: inline;
+			visibility:hidden;
+		}*/
+		body{
+			background-color: gray;
+		}
+	</style>
+
+ 
+</head>
+<body class="body">
+	<center>
+		<div class="fm">
+			<form action="sd.php" method="post" onsubmit="return validate();">
+				<h1>REGISTRATION FORM</h1><br>
+
+				First Name : <input type="txt" name="FName" placeholder="Enter First Name" id="fn"  class="fname" onkeyup ="fin();" ><div id="div1" class="div" >Invalid Data!!..</div> <br><br>
+				Middle Name : <input type="txt" name="Mname" placeholder="Enter MiddleName (optional)" id="mn" onkeyup="middlename();"><div id="div2" class="div">Invalid Data!!..</div> <br><br>
+				Last Name: <input type="txt" name="SName" placeholder="Enter Second Name" id="ln" onkeyup="lastname();"><div id="div3" class="div">Invalid Data!!..</div><br><br>
+				Full Name : <input type="txt" name="FlName" placeholder="Enter Full Name" id="fun" readonly ><input type="radio" 
+				id="ch1" onclick="fullname();"><br><br>
+				Country : <select  id="slt">
+					<option>Select</option>
+					<option id="ind">INDIA</option>
+					<option id="us">USA</option>
+				</select>
+				Phone Number :<input type="txt" id="phno" onkeyup="phonenum();"><div id="div4" class="div">Invalid Number!!..</div><br><br>
+				Password :<input type="password" id="pwd" style="position:relative;" ><img id="eye" src="eye.png" class="image" onclick="passwd();"><img class="image1" src="eyecross.png" onclick="passwd();"><br><br>
+				Email Id :<input  name="Email" placeholder="Enter Mail" id="em" onkeyup="gemail();"><div id="div5" class="div">Enter Valid Email !!..</div><br><br>
+				<fieldset >
+					<legend>Gender</legend>
+					<input type="radio" name="a">Male
+					<input type="radio" name="a">Female
+					<input type="radio" name="a">Others
+				</fieldset><br>  
+				<fieldset>
+					<legend >Hobbies</legend>
+						<input type="checkbox" name="a" value="rb">Readind
+						<input type="checkbox" name="b" value="pg">Playing
+						<input type="checkbox" name="c" value="wtv">Watching TV
+						<input type="checkbox" name="d" value="">Listing Songs
+				</fieldset><br>
+				DOB :<input type="date" name="dob" class="db">Age:<input type="txt" name="a" id="age" readonly><input type="checkbox" name="ch" id="ch2" onclick="agecalc();"><br><br>
+				Address :<br>
+				<textarea type="text" name="Address" id="address" onchange="addresscheck();"placeholder="Enter Your Address"></textarea><br><br>
+				Select Image :<input type="file" name="img" accept="image/*" id="fimg" onchange="filevalid()">
+				color:<input type="color" name=""><br><br>
+				<input type="checkbox" name="agree" style="padding-left:45px;" required>I agree to the terms of the company<br><br>
+				<input type="submit" name="Register" value="Register"> 
+				<input type="reset" name="reset">          
+			</form>
+		</div>
+	</center>
+	<div class="content">
+		<p id="content"></p>
+	</div>
+	<script type="text/javascript">
+		function fin1(){
+			document.getElementById('div1').style.visibility="hidden";
+			document.getElementById('fn').style.border="1px solid black";
+		}
+		function fin(){
+			var a=document.getElementById('fn').value;
+			var b=document.getElementById('div1').value;
+			var dp=document.querySelector("#content")
+			dp.innerHTML=a
+			var reg=/^[a-zA-Z][a-zA-Z]*$/
+			if(reg.test(a))
+			{
+				if(a.length>3)
+				{
+	
+					return true;
+				}
+				else
+				{
+					document.getElementById("fn").style.border="2px solid red";
+					document.getElementById("div1").style.visibility="visible";
+					setTimeout(fin1,3000);
+					return false;
+				}
+
+			}
+			else
+			{
+				document.getElementById("fn").style.border="2px solid red";
+				document.getElementById("div1").style.visibility="visible";
+				setTimeout(fin1,3000);
+				return false;
+			}
+
+		}
+		function min1(){
+			document.getElementById('div2').style.visibility="hidden";
+			document.getElementById('mn').style.border="1px solid black";
+		}
+		function middlename(){
+			var m=document.getElementById('mn').value;
+			var b=document.querySelector('#div2');
+			var reg=/^[a-zA-Z][a-zA-Z]*$/
+			if(reg.test(m))
+			{
+
+				if(m.length>3)
+				{
+	
+					return true;
+				}
+				else
+				{
+					document.getElementById("mn").style.border="2px solid red";
+					b.style.visibility="visible";
+					setTimeout(min1,3000);
+					return false;
+				}
+
+			}
+			else
+			{
+				document.getElementById("mn").style.border="2px solid red";
+				b.style.visibility="visible";
+				setTimeout(min1,3000);
+				return false;
+			}
+		}
+		function ln1(){
+			document.getElementById('div3').style.visibility="hidden";
+			document.getElementById('ln').style.border="1px solid black";
+		}
+		function lastname(){
+			var l=document.getElementById('ln').value;
+			var b=document.querySelector('#div3');
+			var reg=/^[a-zA-Z][a-zA-Z]*$/
+			if(reg.test(l))
+			{
+
+				if(l.length>3)
+				{
+	
+					return true;
+				}
+				else
+				{
+					document.getElementById("ln").style.border="2px solid red";
+					b.style.visibility="visible";
+					setTimeout(ln1,3000);
+					return false;
+				}
+
+			}
+			else
+			{
+				document.getElementById("ln").style.border="2px solid red";
+				b.style.visibility="visible";
+				setTimeout(ln1,3000);
+				return false;
+			}
+		}
+		function fullname()
+		{
+			var a=document.getElementById("fn").value;
+			var b=document.getElementById("ln").value;
+			var c=a+b;
+			if(ch1.checked)
+			{
+				document.getElementById("fun").value=c;
+			}
+			else{
+				return false;
+			}
+		}
+		function phonenum1()
+		{
+			document.getElementById("phno").style.border="1px solid black";
+			document.getElementById("div4").style.visibility="hidden";
+		}
+		function phonenum()
+		{
+			var a=document.getElementById("slt");
+			var p=document.getElementById("phno").value
+			var b=a.options[a.selectedIndex].value;
+			if(b=="USA")
+			{
+				var regus=/^\d{3}-\d{3}-\d{4}$/;
+				if(regus.test(p)){
+					return true;
+				}
+				else{
+					document.getElementById("phno").style.border="2px solid red";
+					document.getElementById("div4").style.visibility="visible";
+					setTimeout(phonenum1,3000);
+					return false;
+				}
+			}
+			else if(b=="INDIA")
+			{
+				var regin=/^[6-9][0-9]{9}$/
+				if(regin.test(p)){
+
+					return true;
+				}
+				else{
+					document.getElementById("phno").style.border="2px solid red";
+					document.getElementById("div4").style.visibility="visible";
+					setTimeout(phonenum1,3000);
+					return false;
+				}
+			}
+			else{
+				document.getElementById("phno").style.border="2px solid red";
+				document.getElementById("div4").style.visibility="visible";
+				setTimeout(phonenum1,3000);
+				return false;
+			}
+		}
+	function passwd() 
+	{	
+		var x=document.getElementById("pwd");
+		if(x.type==="password"){
+			x.type="text";
+		}
+		else{
+			x.type="password";
+		}
+		var x=document.getElementById("image1");
+		if(x.style.display==="none"){
+			x.style.display="block";
+		}
+		else{
+			x.style.display="none";
+		}
+
+		var x=document.getElementById("image");
+		if(x.style.display==="block"){
+			x.style.display="none";
+		}
+		else{
+			x.style.display="block";
+		}
+
+	}
+/*	function passwd()
+	{ 
+		document.getElementById("pwd").type==="password";
+		document.querySelector(".image1").style.visibility="hidden";
+		document.querySelector("image").style.visibility="visible";
+		
+	}*/
+	function gemail1()
+	{
+		document.getElementById('em').style.border="1px solid black";
+		document.getElementById('div5').style.visibility="hidden"
+	}
+	function gemail()
+	{
+		var ereg=/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
+		var a=document.getElementById("em").value;
+		if(ereg.test(a))
+		{
+			return true;
+		}
+		else
+		{
+			document.getElementById('em').style.border="2px solid red";
+			document.getElementById('div5').style.visibility="visible";
+			setTimeout(gemail1,3000);
+			return false
+		}
+	}
+	function addresscheck(){
+		var j=document.getElementById("address").value;
+		var withNoDigits = j.replace(/[0-9]/g, '');
+		document.getElementById("address").value=withNoDigits;
+	}
+	function agecalc()
+	{
+		var v=document.querySelector(".db").value;
+		var s=v.split("-");
+		var ager=2022-s[0];
+		var c=document.getElementById("ch2");
+		if(c.checked)
+		{
+			document.getElementById("age").value="You are"+ager+"Years Old";
+		}
+	}
+	function filevalid()
+	{
+		const fi=document.getElementById("fimg")
+		if(fi.files.length>0){
+			for (const i=0;i<=fi.files.length-1;i++){
+				const fsize=fi.files.item(i).size;
+				const file=Math.round(f/1024);
+				if(file>=50){
+					alert("image should be less than 50kb");
+					return false;
+				}
+				else{
+					alert("kk")
+					document.getElementById("size").innerHTML='<b>'+file+'</b> kb'
+				}
+			}
+		}
+		
+	}
+	function validate()
+	{
+			fin();
+			middlename();
+			lastname();
+		 	fullname();	
+		 	return phonenum();
+		 	passwed();
+		 	return gemail();
+		 	return addresscheck();
+		 	return uploadfile();
+		 	return passwd();
+		 	return filevalid();
+	}
+	
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Website</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="main">
+		<div class="c"><h2 style="margin-top: 12px; margin-left:5px;">S@I</h2></div>
+		<img src="sai.jpg" class="p" onmouseover="nm();" onmouseout="mn();">
+		<span class="wn">RGUKT</span>
+		<img src="menu.png" class="menu" onclick="sidebar();"></div>
+	<div class="nav">
+		<ul>
+			<li ><a href="index1.html">Home</a></li>
+			<li><a href="" >Exam</a>
+			
+				<div class="login">
+					<ul>
+						<li><a href="loginform.html">Login</a></li>
+						<li><a href="form_validation.html">Register</a></li>
+					</ul>
+				</div>
+			</li>
+			<li><a href="#">Branches</a>
+				<div class="branch">
+					<ul>
+						<li><a href="#">CSE</a>
+							<div class="choose">
+								<ul>
+									<li><a href="#">STUDENT</a></li>
+									<li><a href="#">FACULTY</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#">ECE</a>
+							<div class="choose">
+								<ul>
+									<li><a href="#">STUDENT</a></li>
+									<li><a href="#">FACULTY</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#">MECH</a>
+							<div class="choose">
+								<ul>
+									<li><a href="#">STUDENT</a></li>
+									<li><a href="#">FACULTY</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#">EEE</a>
+							<div class="choose">
+								<ul>
+									<li><a href="#">STUDENT</a></li>
+									<li><a href="#">FACULTY</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#">CHEM</a>
+							<div class="choose">
+								<ul>
+									<li><a href="#">STUDENT</a></li>
+									<li><a href="#">FACULTY</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li><a href="usa.html">Contact</a></li>
+		</ul>
+	</div>
+	<div class="div1">
+		<div class="inf"> 
+		<h1 style="margin-top: 15px ;margin-bottom:15px;">Information</h1>
+            <input type="text" onkeyup="filter(this);" id="search" placeholder="Search Here">
+            <ul id="ids" style="margin-top:10px;">
+                <li class="d">N180185</li>
+                <li class="d">N180380</li>
+                <li class="d">N180017</li>
+                <li class="d">N180164</li>
+                <li class="d">N180183</li>
+                <li class="d">N180431</li>
+                <li class="d">N180002</li>
+                <li class="d">N180323</li>
+            </ul>
+        </div>
+	</div>
+	<div class="div2">
+		<iframe src="image_slider.html" style="width: 100%; height: 500px; border-radius: 10px;"></iframe>
+	</div>
+	<div class="div3">
+		<div class="ntf">Notifications</div>
+		
+		<div class="nt"><marquee onmouseover="stop()" direction="" onmouseout="start()" style="cursor:pointer;">Notification1</marquee></div>
+		<div class="nt"><marquee onmouseover="stop()" onmouseout="start()" style="cursor:pointer;">Notification2</marquee></div>
+		<div class="nt"><marquee onmouseover="stop()" onmouseout="start()" style="cursor:pointer;">Notification3</marquee></div>
+		<div class="nt"><marquee onmouseover="stop()" onmouseout="start()" style="cursor:pointer;">Notification3</marquee></div>
+		<div class="nt"><marquee onmouseover="stop()" onmouseout="start()" style="cursor:pointer;">Notification4</marquee></div>
+		<div class="nt"><marquee onmouseover="stop()" onmouseout="start()" style="cursor:pointer;">Notification5</marquee></div>
+		<div class="nt"><marquee onmouseover="stop()" onmouseout="start()" style="cursor:pointer;">Notification6</marquee></div>
+	</div>
+	<div class="vnav">
+		<img src="ra.png" id="img" style="width:50px; height:50px">
+	<ul style="text-align: center;">
+			<li ><a href="#">Home</a></li>
+			<li><a href="#" >Exam</a>
+				<div class="vlogin">
+					<ul>
+						<li><a href="loginform.html">Login</a></li>
+						<li><a href="form_validation.html">Register</a></li>
+					</ul>
+				</div>
+			</li>
+			<li><a href="#">Branches</a>
+				<div class="vbranch">
+					<ul>
+						<li><a href="#">CSE</a>
+							<div class="vchoose">
+								<ul>
+									<li><a href="#">STUDENT</a></li>
+									<li><a href="#">FACULTY</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#">ECE</a></li>
+						<li><a href="#">MECH</a></li>
+						<li><a href="#">EEE</a></li>
+						<li><a href="#">CHEM</a></li>
+					</ul>
+				</div>
+			</li>
+			<li><a href="usa.html">Contact</a></li>
+		</ul>	
+
+	</div>
+	<footer>
+		<div class="ft" style="width:1350px;border: 1px solid silver; height: 60px;background-color: #440066; border-radius: 10px;">
+			<h1>&#169;@rgukt which is having so many resources</h1>
+			<img style="margin-left: 90%;margin-top: -10%;" src="https://hitwebcounter.com/counter/counter.php?page=8014596&style=0036&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" />
+		</div>
+	</footer>
+	<script type="text/javascript">
+		function sidebar(){
+			document.querySelector(".vnav").style.visibility="visible";
+			document.querySelector(".vnav").style.animationDuration="10s"
+			document.querySelector(".vnav").style.animationDelay="-10s"
+			document.querySelector(".nav").style.display="none"
+		}
+		var ds;
+		function filter(e){
+			var a=document.getElementById("search").value;
+		    ds=Array.from(document.querySelectorAll(".d"))
+		    ds.forEach((item) => {
+		        if(item.textContent.toUpperCase().indexOf(e.value)!=-1||item.textContent.toLowerCase().indexOf(e.value)!=-1){
+		            item.style.display="block"
+		        }
+		        else{
+		            item.style.display="none";
+		        }
+
+		    })
+		}
+		function nm(){
+			/*document.querySelector(".p").style.visibility="hidden";*/
+	
+			document.querySelector(".c").style.visibility="visible";
+		}
+		function mn(){
+			document.querySelector(".c").style.visibility="hidden";
+		}
+		var x=document.querySelector("#img")
+		x.addEventListener('click',()=>{
+			document.querySelector(".vnav").style.visibility="hidden";
+			document.querySelector(".nav").style.display="block";
+		})
+	</script>
+</body>
+</html>
